@@ -1,0 +1,15 @@
+# CodeLite build output
+build-*/
+
+# CodeLite and ctags local metadata
+.codelite/
+.ctagsd/
+
+# C/C++ build artifacts
+*.exe
+*.o
+*.obj
+*.out
+
+# Temporary files
+tmp/
