@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<CodeLite_Project Name="Ejemplo13" Version="11000" InternalType="Console">
+<CodeLite_Project Name="Colas" Version="11000" InternalType="Console">
   <Description />
   <Dependencies />
   <Settings Type="Executable">
@@ -33,10 +33,10 @@
   </Settings>
   <VirtualDirectory Name="src">
     <VirtualDirectory Name="Header Files">
-      <File Name="Persona.hpp" />
+      <File Name="Cola.hpp" />
     </VirtualDirectory>
     <VirtualDirectory Name="Source Files">
-      <File Name="Persona.cpp" />
+      <File Name="Cola.cpp" />
       <File Name="main.cpp" />
     </VirtualDirectory>
   </VirtualDirectory>

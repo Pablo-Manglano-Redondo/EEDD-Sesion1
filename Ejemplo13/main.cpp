@@ -1,24 +1,38 @@
+#include "Persona.hpp"
+
+#include <array>
+#include <cstdlib>
+#include <ctime>
 #include <iostream>
 
-using namespace std;
-
-int cuadrado(int x)
+int main()
 {
-    return x * x;
-}
+    std::srand(static_cast<unsigned int>(std::time(nullptr)));
+    std::array<Persona*, 10> personas{};
 
-void cuadrado(char c)
-{
-    cout << c << c << endl;
-    cout << c << c << endl;
-    return;
-}
+    for (int i = 0; i < 10; ++i) {
+        personas[static_cast<std::size_t>(i)] = new Persona(18 + i);
+    }
 
-int main(int argc, char** argv)
-{
-    cout << "Usamos la funcion para elevar al cuadrado" << endl;
-    cout << cuadrado(12) << endl;
-    cout << "Ahora la usamos para pintar un caracter formando un cuadrado" << endl;
-    cuadrado('*');
+    std::cout << "Diez personas con edades distintas (18 a 27):\n";
+    for (const Persona* persona : personas) {
+        persona->mostrar();
+    }
+
+    int mujeres = 0;
+    int hombres = 0;
+    for (const Persona* persona : personas) {
+        if (persona->esMujer()) {
+            ++mujeres;
+        } else {
+            ++hombres;
+        }
+    }
+    std::cout << "Total: " << mujeres << " mujeres y " << hombres
+              << " hombres.\n";
+
+    for (Persona* persona : personas) {
+        delete persona;
+    }
     return 0;
 }
